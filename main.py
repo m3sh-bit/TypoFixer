@@ -2,6 +2,8 @@ import time
 import keyboard
 import win32clipboard
 import win32con
+from tendo import singleton
+me = singleton.SingleInstance()
 
 eng_to_rus = {
     'q': 'й', 'w': 'ц', 'e': 'у', 'r': 'к', 't': 'е', 'y': 'н', 'u': 'г', 'i': 'ш', 'o': 'щ', 'p': 'з', '[': 'х', ']': 'ъ',
@@ -68,7 +70,7 @@ def on_hotkey():
     simulate_ctrl_v()
 
 def main():
-    keyboard.add_hotkey('ctrl+/', on_hotkey)
+    keyboard.add_hotkey('ctrl+\'', on_hotkey)
     keyboard.wait()
 
 if __name__ == '__main__':
